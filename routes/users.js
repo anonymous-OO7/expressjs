@@ -15,15 +15,17 @@ router.get("/new" ,(req ,res) =>{
     res.send("NEW USER ROUTER");
 
 });
+
+
 router.get("/:id" , (req,res) =>{
-
-
     res.send(`USER HAS ID ${req.params.id}`);
 });
 
 
-router.route("/:id").get((req,res) => {
 
+
+router.route("/:id").get((req,res) => {
+    
     res.send("GET REQUEST SENT" `USER HAS ID ${req.params.id}`);
 }).put((req,res) =>{
 
