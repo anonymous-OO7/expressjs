@@ -10,9 +10,10 @@ const WebRouter = require('./routes/WebRouter');
 
 
 //static
-
 app.use(express.static( join(process.cwd(), 'public')));
 
+//viewengine
+app.set('view engine' , 'ejs');
 
 // app.listen(8000);
 
