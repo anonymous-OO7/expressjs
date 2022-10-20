@@ -4,10 +4,9 @@ const express = require('express');
 const app = express();
 const {join}  = require('path');
 const port  = process.env.PORT || '3000';
-
 const userRouter = require('./routes/users');
 const WebRouter = require('./routes/WebRouter');
-
+const Logger = require('../expressJs/middlewares/logger-middleware');
 
 //static
 app.use(express.static( join(process.cwd(), 'public')));
@@ -20,6 +19,13 @@ app.set('view engine' , 'ejs');
 
 app.use('/users' ,userRouter);
 app.use('/web', WebRouter);
+
+
+
+//Application level middlewares
+app.use(Logger);
+
+
 
 
 
